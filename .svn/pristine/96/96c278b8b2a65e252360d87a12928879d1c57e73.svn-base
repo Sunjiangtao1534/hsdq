@@ -1,0 +1,148 @@
+package com.example.hsdj;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+
+public class My_Fragment extends Fragment {
+    Button button1; //点击的LinearLayout
+    private EditText et_data_uname;
+    private EditText et_data_upass;
+    private Map<String, String> stringHashMap = new HashMap<String, String>();
+    private int code;
+    private String message;
+    private DataDTO data;
+
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view=inflater.inflate(R.layout.my_fragment,null);
+        button1= (Button) view.findViewById(R.id.button1);
+        button1.setOnClickListener(onclick);
+
+        return view;
+    }
+
+
+    View.OnClickListener onclick=new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            loginPOST();
+        }
+    };
+
+    //發送post請求
+    public void loginPOST() {
+        et_data_uname = (EditText) getActivity().findViewById(R.id.et_data_uname);
+        et_data_upass = (EditText) getActivity().findViewById(R.id.et_data_upass);
+        String username = et_data_uname.getText().toString();
+        String userpwd = et_data_upass.getText().toString();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                JSONObject param = new JSONObject();
+                try {
+                    param.put("username", username);        //挨个put你的参数
+                    param.put("userpwd", userpwd);
+                    String result = My_Fragment.post(param, "http://58.51.240.150:8000/app/hsdj/authmgr/views/userLogin");
+                } catch (Exception e) {
+                    Log.d("failure", "run: " + e.toString());
+                }
+            }
+        }).start();
+    }
+
+    static String post(JSONObject param, String url){
+        RequestBody requestBody = FormBody.create(MediaType.parse("application/json; charset=utf-8"), param.toString());
+        try{
+            Request request = new Request.Builder().url(url).post(requestBody).build();
+            OkHttpClient okHttpClient = new OkHttpClient();
+            try (Response response = okHttpClient.newCall(request).execute()) {
+                String result = response.body().string();
+                if (null == result || "".equals(result)){
+                    throw new Exception("返回了一个空值！");
+                }else {
+                    //josn串拿到返回的结果
+                    Gson gson = new Gson();
+                    My_Fragment b = gson.fromJson(result,My_Fragment.class);
+                    System.out.println(b.getData().getLogintime());
+                }
+                return result;
+            }catch (Exception e){
+                throw e;
+            }
+        }catch (Exception e){
+            System.out.println("post: post请求失败:" + e);
+            String result = "{'flag':0,'message':'" + e.toString() + "'}";
+            return result;
+        }
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public DataDTO getData() {
+        return data;
+    }
+
+    public void setData(DataDTO data) {
+        this.data = data;
+    }
+
+
+    public static class DataDTO {
+        private String logintime;
+        private String token;
+
+        public String getLogintime() {
+            return logintime;
+        }
+
+        public void setLogintime(String logintime) {
+            this.logintime = logintime;
+        }
+
+        public String getToken() {
+            return token;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+package djjy.stlx;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.hsdj.R;
+
+public class ExercisesActivity extends AppCompatActivity {
+    private ImageButton btn_return;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.exercises_activity);
+
+        btn_return=findViewById(R.id.btn_return);
+        btn_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //finish是取消当前页面
+                finish();
+            }
+        });
+    }
+}

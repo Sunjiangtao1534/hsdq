@@ -1,0 +1,119 @@
+package djjy.spkc;
+
+import android.hardware.Sensor;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.os.SystemClock;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.hsdj.MyApplication;
+import com.example.hsdj.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+public class VideoInfoActivity extends AppCompatActivity {
+    private ImageButton btn_return;
+    private ListView list_view;
+
+    private VideoListAdapter mAdapter;
+    private SensorEventListener mSensorEventListener;
+    private SensorManager mSensorManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_video_info);
+        long startTime = SystemClock.elapsedRealtime();
+
+
+        btn_return=findViewById(R.id.btn_return);
+        btn_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                long endTime = SystemClock.elapsedRealtime();
+                long stayTime = endTime-startTime;
+                if (stayTime>120000){
+                    System.out.println("aaa");
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+                    //创建OkHttpClient实例，主要用于请求网络
+                    OkHttpClient okHttpClient = new OkHttpClient();
+                    //创建表单请求体
+                    FormBody.Builder formBody = new FormBody.Builder();
+                    //传递键值对参数
+                    MyApplication application = (MyApplication) getApplicationContext();
+                    formBody.add("user_id", application.getUserId());
+                    formBody.add("type","learn_video");
+                    formBody.add("plan_id",getIntent().getStringExtra("plan_id"));
+                    formBody.add("learn_time_length", String.valueOf(stayTime/1000));
+                    formBody.add("score",getIntent().getStringExtra("file_score"));
+                    formBody.add("content_id", getIntent().getStringExtra("id"));
+//                    System.out.println(application.getUserId()+" "+getIntent().getStringExtra("plan_id")+" "+getIntent().getStringExtra("file_score"));
+                    //创建Request实例，设置POST参数
+                    Request okRequest = new Request.Builder().url("http://58.51.240.150:8000/app/hsdj/xxjymgr/views/addScoreRecord").post(formBody.build()).build();
+                    try {
+                        Response response = okHttpClient.newCall(okRequest).execute();
+                        String result=response.body().string();
+                        System.out.println(result);
+                        JSONObject obj = new JSONObject(result);
+                        System.out.println(obj.optString("code"));
+                        if ("0".equals(obj.optString("code"))){
+                            System.out.println("保存数据成功");
+                        }else{
+                            System.out.println("数据保存失败");
+                        }
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+                }else{
+                    Toast.makeText(VideoInfoActivity.this, "小于2分钟不计入学习积分", Toast.LENGTH_SHORT).show();
+                }
+                finish();
+            }
+        });
+
+        list_view = (ListView) findViewById(R.id.list_view);
+        mAdapter = new VideoListAdapter(this,getIntent().getStringExtra("file_path"),getIntent().getStringExtra("remark"));
+        list_view.setAdapter(mAdapter);
+        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        mSensorEventListener = new JCVideoPlayer.JCAutoFullscreenListener();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (JCVideoPlayer.backPress()) {
+            return;
+        }
+        super.onBackPressed();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Sensor mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mSensorManager.registerListener(mSensorEventListener, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mSensorManager.unregisterListener(mSensorEventListener);
+        JCVideoPlayer.releaseAllVideos();
+    }
+}

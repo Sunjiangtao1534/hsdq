@@ -1,0 +1,48 @@
+package djjy.djzx;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.hsdj.R;
+
+public class ConsInfoActivity extends AppCompatActivity {
+    private ImageButton btn_return;
+    private TextView news_title;
+    private TextView news_content;
+    private TextView news_score;
+    private ImageView news_covering_path;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cons_info);
+
+        btn_return=findViewById(R.id.btn_return);
+        btn_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //finish是取消当前页面
+                finish();
+            }
+        });
+
+        ininView();
+    }
+
+    private void ininView(){
+        news_title=findViewById(R.id.news_title);
+        news_title.setText(getIntent().getStringExtra("news_title"));
+        news_content=findViewById(R.id.news_content);
+        news_content.setText(getIntent().getStringExtra("news_content"));
+        news_score=findViewById(R.id.news_score);
+        news_score.setText(getIntent().getStringExtra("news_score"));
+        news_covering_path=findViewById(R.id.news_covering_path);
+//        Glide.with(this).load(getIntent().getStringExtra("news_covering_path")).into(news_covering_path);
+    }
+}

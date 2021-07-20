@@ -1,0 +1,56 @@
+package com.example.hsdj;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+/**
+ * Created by Administrator on 2018/4/26.
+ */
+public class MyAdapter extends BaseAdapter {
+    private Context context;
+    private ArrayList<String> strings;
+    public static int mPosition;
+    public MyAdapter(Context context, ArrayList<String> strings){
+        this.context =context;
+        this.strings = strings;
+    }
+    @Override
+    public int getCount() {
+        // TODO Auto-generated method stub
+        return strings.size();
+    }
+    @Override
+    public Object getItem(int position) {
+        // TODO Auto-generated method stub
+        return strings.get(position);
+    }
+    @Override
+    public long getItemId(int position) {
+        // TODO Auto-generated method stub
+        return position;
+    }
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        // TODO Auto-generated method stub
+        convertView = LayoutInflater.from(context).inflate(R.layout.listview_item, null);
+        TextView tv = (TextView) convertView.findViewById(R.id.tv);
+        mPosition = position;
+        tv.setText(strings.get(position));
+        tv.setTextColor(Color.BLACK);
+        tv.setTextSize(15);
+        if (position == PersonActivity.mPosition) {
+            tv.setTextColor(Color.rgb(0,255,255));
+            convertView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        } else {
+            convertView.setBackgroundColor(Color.parseColor("#F5F5F5"));
+        }
+        return convertView;
+    }
+}

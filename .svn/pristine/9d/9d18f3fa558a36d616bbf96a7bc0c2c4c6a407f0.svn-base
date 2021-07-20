@@ -1,0 +1,142 @@
+package com.example.hsdj;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageButton;
+import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+public class PersonActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
+    private ImageButton btn_return;
+//    private String[] strs = { "全部课程", "拼音", "同步+奥数", "新概念英语", "晚托班", "音标", "暑托班",
+//            "围棋", "美术","硬笔书法", "毛笔书法", "幼小衔接班", "小升初", "英语一对一", "语文", "数学",
+//            "英语" };
+    private static ArrayList<String> strs=new ArrayList<>();
+    private ListView listView;
+    private MyAdapter adapter;
+    private MyFragment myFragment;
+    public static int mPosition;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_person);
+
+        btn_return=findViewById(R.id.btn_return);
+        btn_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(PersonActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        try{
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            OkHttpClient okHttpClient = new OkHttpClient();
+            Request okRequest = new Request.Builder().url("http://58.51.240.150:8000/app/hsdj/djzzmgr/views/getPartyOrgTree").build();
+            Response response = okHttpClient.newCall(okRequest).execute();
+            String result=response.body().string();
+            parseStr(result);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        initView();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //避免重复打开页面时数据重复填写
+        strs.clear();
+    }
+
+        /*处理后端返回的数据*/
+    public static void parseStr(String result) throws JSONException {
+        JSONArray array = new JSONArray(result);
+        JSONArray array1=new JSONArray(String.valueOf(array));
+        JSONObject obj = array1.getJSONObject(0);
+        //中国有色集团党委
+        strs.add(obj.optString("org_name"));
+        //大冶有色党委
+        JSONArray group = new JSONArray(obj.optString("children"));
+        JSONObject jsonObject = group.getJSONObject(0);
+        strs.add(jsonObject.optString("org_name"));
+        //厂级单位
+        JSONArray factory_arr=new JSONArray(jsonObject.optString("children"));
+        for (int i = 0; i < factory_arr.length(); i++) {
+            JSONObject factory = factory_arr.getJSONObject(i);
+            strs.add(factory.optString("org_name"));
+            //车间单位
+            JSONArray workshop_arr=new JSONArray(factory.optString("children"));
+            for (int j = 0; j < workshop_arr.length(); j++) {
+                JSONObject workshop = workshop_arr.getJSONObject(j);
+                strs.add(workshop.optString("org_name"));
+                //班组单位
+                JSONArray team_arr=new JSONArray(workshop.optString("children"));
+                for (int k = 0; k < team_arr.length(); k++) {
+                    JSONObject team=team_arr.getJSONObject(k);
+                    strs.add(team.optString("org_name"));
+                }
+            }
+        }
+        System.out.println(strs);
+    }
+
+
+    /**
+     * 初始化view
+     */
+    private void initView() {
+        // TODO Auto-generated method stub
+        listView = (ListView) findViewById(R.id.listview_ss);
+        adapter = new MyAdapter(this, strs);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
+        //创建MyFragment对象
+        myFragment = new MyFragment();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager()
+                .beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, myFragment);
+        //通过bundle传值给MyFragment
+        Bundle bundle = new Bundle();
+        bundle.putString(MyFragment.TAG, strs.get(mPosition));
+        myFragment.setArguments(bundle);
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        // TODO Auto-generated method stub
+        //拿到当前位置
+        mPosition = position;
+        //即使刷新adapter
+        adapter.notifyDataSetChanged();
+        for (int i = 0; i < strs.size(); i++) {
+            myFragment = new MyFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, myFragment);
+            Bundle bundle = new Bundle();
+            bundle.putString(MyFragment.TAG, strs.get(position));
+            myFragment.setArguments(bundle);
+            fragmentTransaction.commit();
+        }
+    }
+}

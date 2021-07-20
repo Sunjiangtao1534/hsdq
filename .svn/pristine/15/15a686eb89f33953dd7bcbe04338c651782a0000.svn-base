@@ -1,0 +1,29 @@
+package com.example.hsdj;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+
+/**
+ * Created by Administrator on 2018/4/26.
+ */
+public class MyFragment extends Fragment {
+    public static final String TAG = "MyFragment";
+    private String str;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        View view = inflater.inflate(R.layout.myfragment, null);
+        //TextView tv_title = (TextView) view.findViewById(R.id.tv_title);
+        //得到数据
+        str = getArguments().getString(TAG);
+        Toast.makeText(getActivity(), "未找到相关课程哦", Toast.LENGTH_SHORT).show();
+        //tv_title.setText(str);
+        return view;
+    }
+}

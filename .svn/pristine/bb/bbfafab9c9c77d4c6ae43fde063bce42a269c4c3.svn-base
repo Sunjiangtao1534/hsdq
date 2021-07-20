@@ -1,0 +1,113 @@
+package djjy.stlx;
+
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.hsdj.R;
+import com.google.gson.Gson;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+public class ExercisesInfoActivity extends AppCompatActivity {
+    private ImageButton btn_return;
+    private ListView list_view;
+    /*单选题*/
+    private List<HashMap<String, Object>> singleChose = new ArrayList<HashMap<String,Object>>();
+    private List<HashMap<String, Object>> doubleChose = new ArrayList<HashMap<String,Object>>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_exercises_info);
+
+        btn_return=findViewById(R.id.btn_return);
+        btn_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //finish是取消当前页面
+                finish();
+            }
+        });
+
+        try {
+            /*查找试卷列表*/
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            //创建OkHttpClient实例，主要用于请求网络
+            OkHttpClient okHttpClient = new OkHttpClient();
+            //创建表单请求体
+            FormBody.Builder formBody = new FormBody.Builder();
+            //传递键值对参数
+            formBody.add("ob.id",getIntent().getStringExtra("exam_id"));
+            //创建Request实例，设置POST参数
+            Request okRequest = new Request.Builder().url("http://192.168.9.104:8000/app/hsdj/xxjymgr/views/getTopicsByExam").post(formBody.build()).build();
+            Response response = okHttpClient.newCall(okRequest).execute();
+            Gson gson=new Gson();
+            ExercisesInfo exercisesInfo = gson.fromJson(response.body().string(), ExercisesInfo.class);
+            if ("0".equals(exercisesInfo.getCode())){
+                //查询成功
+                for (int i = 0; i < exercisesInfo.getData().getRows().size(); i++) {
+                    HashMap<String, Object> item = new HashMap<String, Object>();
+                    item.put("exam_title",exercisesInfo.getData().getRows().get(i).getTopic_title());//题目
+                    item.put("topic_score",exercisesInfo.getData().getRows().get(i).getTopic_score());//分数
+                    item.put("option_def",exercisesInfo.getData().getRows().get(i).getOption_def());//题目选项
+                    item.put("analysis",exercisesInfo.getData().getRows().get(i).getAnalysis());//题目解析
+                    if ("单选题".equals(exercisesInfo.getData().getRows().get(i).getTopic_types())){
+                        singleChose.add(item);
+                    }else if ("多选题".equals(exercisesInfo.getData().getRows().get(i).getTopic_types())){
+                        doubleChose.add(item);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //避免重复打开页面时数据重复填写
+    }
+
+    /**
+     * 初始化view
+     */
+    private void initView() {
+        LinearLayout linearLayout = new LinearLayout(this);
+        if (singleChose.size()>0){
+//            TextView title=
+
+        }
+        //创建SimpleAdapter适配器将数据绑定到item显示控件上
+//        SimpleAdapter adapter = new SimpleAdapter(this, singleChose, R.layout.exercise,
+//                new String[]{"exam_title"}, new int[]{R.id.exam_title});
+//        //实现列表的显示
+//        list_view=findViewById(R.id.list_view);
+//        list_view.setAdapter(adapter);
+//        //条目点击事件
+//        list_view.setOnItemClickListener(new ExercisesActivity.ItemClickListener());
+    }
+
+    //获取点击事件
+//    private final class ItemClickListener implements AdapterView.OnItemClickListener {
+//        @SuppressLint("WrongConstant")
+//        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//        }
+//    }
+}

@@ -1,0 +1,114 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="考题"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="F"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:id="@+id/checkBox7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="G"
+            android:textColor="@color/black"/>
+
+        <CheckBox
+            android:id="@+id/checkBox8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="H"
+            android:textColor="@color/black"/>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/check_show_analysis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_question"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="24dp"
+            android:button="@null"
+            android:drawableRight="@drawable/sel_homework_analysis"
+            android:drawablePadding="3dp"
+            android:text="查看解析"
+            android:textColor="#FF9800"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_single_analysis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="答案：A"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:id="@+id/tv_analysis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="解析："
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

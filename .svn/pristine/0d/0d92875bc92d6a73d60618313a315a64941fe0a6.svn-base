@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:src="@drawable/login"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登  录"
+            android:textColor="@color/black"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginBottom="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <EditText
+            android:id="@+id/et_data_uname"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:hint="用户名"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:singleLine="true"
+            android:layout_marginTop="160dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/input_background"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/username"
+            android:drawablePadding="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <EditText
+            android:id="@+id/et_data_upass"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="60dp"
+            android:hint="密码"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:background="@drawable/input_background"
+            android:paddingLeft="10dp"
+            android:maxLines="1"
+            android:drawableLeft="@drawable/password"
+            android:drawablePadding="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="260dp"
+            android:background="#F79709"
+            android:text="登录" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

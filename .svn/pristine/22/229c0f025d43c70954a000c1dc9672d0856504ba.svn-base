@@ -1,0 +1,54 @@
+package com.example.hsdj;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by Administrator on 2018/4/26.
+ */
+public class MyFragment extends Fragment {
+    public static final String TAG = "MyFragment";
+    private String str;
+
+    private TextView tv_title;
+    private ListView list_view;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO Auto-generated method stub
+        View view = inflater.inflate(R.layout.myfragment, null);
+        //得到数据
+        str = getArguments().getString(TAG);
+        initView(view);
+
+        return view;
+    }
+
+    public void initView(View view){
+        tv_title=view.findViewById(R.id.tv_title);
+        tv_title.setText(str);
+        tv_title.setTextColor(Color.BLACK);
+
+        list_view=view.findViewById(R.id.list_view);
+        List<String> list = new ArrayList<String>();
+        list.add("西安市未央区");
+        list.add("西安市未央区");
+        list.add("西安市未央区");
+        list.add("西安市未央区");
+        list.add("西安市未央区");
+        list.add("西安市未央区");
+        ///可以一直添加，在真机运行后可以下拉列表
+//        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, layout.simple_list_item_1,list);
+//        list_view.setAdapter(adapter);
+    }
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item
+            android:id="@+id/action_message"
+            android:enabled="true"
+            android:icon="@drawable/home_bottom_tab_message_selector"
+            android:title="消息"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/action_work"
+            android:enabled="true"
+            android:icon="@drawable/home_bottom_tab_work_selector"
+            android:title="工作"
+            app:showAsAction="ifRoom" />
+        <item
+            android:id="@+id/action_my"
+            android:enabled="true"
+            android:icon="@drawable/home_bottom_tab_my_selector"
+            android:title="我的"
+
+            app:showAsAction="ifRoom" />
+</menu>

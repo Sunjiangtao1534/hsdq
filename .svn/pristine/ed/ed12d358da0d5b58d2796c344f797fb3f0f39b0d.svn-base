@@ -1,0 +1,101 @@
+package djjy.spkc;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.media.MediaMetadataRetriever;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
+import com.example.hsdj.R;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
+
+/**
+ * Created by RANLEGERAN on 2018/5/13.
+ */
+
+public class VideoListAdapter extends BaseAdapter {
+    int[] mVideoIndexs = {0, 1};
+    Context mContext;
+    int mPager = -1;
+    private List<HashMap<String, Object>> list_show = new ArrayList<HashMap<String,Object>>();
+
+    public VideoListAdapter(Context context,List<HashMap<String, Object>> list_show) {
+        this.mContext = context;
+        this.list_show = list_show;
+    }
+
+    public VideoListAdapter(Context context, int pager) {
+        this.mContext = context;
+        this.mPager = pager;
+    }
+
+    @Override
+    public int getCount() {
+        return mPager == -1 ? list_show.size() : list_show.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        if (null == convertView) {
+            holder = new ViewHolder();
+            LayoutInflater mLayoutInflater = LayoutInflater.from(mContext);
+            convertView = mLayoutInflater.inflate(R.layout.video, null);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+        holder.mJCVideoPlayerStandard = (JCVideoPlayerStandard) convertView.findViewById(R.id.videoplayer);
+        if (mPager == -1) {
+            holder.mJCVideoPlayerStandard.setUp(
+                    String.valueOf(list_show.get(position).get("file_path")), JCVideoPlayer.SCREEN_LAYOUT_LIST,
+                    String.valueOf(list_show.get(position).get("remark")));
+            Log.e("TAG", "setUp" + position);
+            Picasso.with(convertView.getContext())
+                    .load(String.valueOf(list_show.get(position).get("file_path")))
+                    .into(holder.mJCVideoPlayerStandard.thumbImageView);
+        } else {
+            holder.mJCVideoPlayerStandard.setUp(
+                    String.valueOf(list_show.get(position).get("file_path")), JCVideoPlayer.SCREEN_LAYOUT_LIST,
+                    String.valueOf(list_show.get(position).get("remark")));
+            Picasso.with(convertView.getContext())
+                    .load(String.valueOf(list_show.get(position).get("file_path")))
+                    .into(holder.mJCVideoPlayerStandard.thumbImageView);
+        }
+        return convertView;
+    }
+
+    /*获取视频第一帧的图片*/
+    public Bitmap getBitmap(String videoUrl){
+        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        retriever.setDataSource(videoUrl, new HashMap());
+        //获得第10帧图片 这里的第一个参数 以微秒为单位
+        Bitmap bitmap = retriever.getFrameAtTime(10000000,MediaMetadataRetriever.OPTION_CLOSEST_SYNC);
+        retriever.release();
+        return bitmap;
+    }
+
+    class ViewHolder {
+        JCVideoPlayerStandard mJCVideoPlayerStandard;
+    }
+}

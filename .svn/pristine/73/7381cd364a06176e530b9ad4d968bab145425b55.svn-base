@@ -1,0 +1,529 @@
+androidx/transition/R.java
+ androidx.transition.R
+ androidx.transition.R$attr
+ androidx.transition.R$color
+ androidx.transition.R$dimen
+ androidx.transition.R$drawable
+ androidx.transition.R$id
+ androidx.transition.R$integer
+ androidx.transition.R$layout
+ androidx.transition.R$string
+ androidx.transition.R$style
+ androidx.transition.R$styleable
+djjy/stlx/BaseFragment.java
+ djjy.stlx.BaseFragment
+djjy/spkc/Video.java
+ djjy.spkc.Video
+ djjy.spkc.Video$DataDTO
+ djjy.spkc.Video$DataDTO$RowsDTO
+person/PerInfoActivity.java
+ person.PerInfoActivity
+ person.PerInfoActivity$1
+androidx/print/R.java
+ androidx.print.R
+djjy/spkc/VideoListAdapter.java
+ djjy.spkc.VideoListAdapter
+ djjy.spkc.VideoListAdapter$ViewHolder
+djjy/stlx/ModelSelectionActivity.java
+ djjy.stlx.ModelSelectionActivity
+ djjy.stlx.ModelSelectionActivity$1
+ djjy.stlx.ModelSelectionActivity$Onclick
+androidx/vectordrawable/R.java
+ androidx.vectordrawable.R
+ androidx.vectordrawable.R$attr
+ androidx.vectordrawable.R$color
+ androidx.vectordrawable.R$dimen
+ androidx.vectordrawable.R$drawable
+ androidx.vectordrawable.R$id
+ androidx.vectordrawable.R$integer
+ androidx.vectordrawable.R$layout
+ androidx.vectordrawable.R$string
+ androidx.vectordrawable.R$style
+ androidx.vectordrawable.R$styleable
+androidx/lifecycle/livedata/core/R.java
+ androidx.lifecycle.livedata.core.R
+com/example/hsdj/Message_Fragment.java
+ com.example.hsdj.Message_Fragment
+ com.example.hsdj.Message_Fragment$1
+ com.example.hsdj.Message_Fragment$1$1
+ com.example.hsdj.Message_Fragment$2
+ com.example.hsdj.Message_Fragment$3
+ com.example.hsdj.Message_Fragment$4
+ com.example.hsdj.Message_Fragment$5
+ com.example.hsdj.Message_Fragment$6
+ com.example.hsdj.Message_Fragment$7
+ com.example.hsdj.Message_Fragment$MyAdapter
+djjy/stlx/SingleChoiseFragment.java
+ djjy.stlx.SingleChoiseFragment
+ djjy.stlx.SingleChoiseFragment$1
+androidx/appcompat/resources/R.java
+ androidx.appcompat.resources.R
+ androidx.appcompat.resources.R$attr
+ androidx.appcompat.resources.R$color
+ androidx.appcompat.resources.R$dimen
+ androidx.appcompat.resources.R$drawable
+ androidx.appcompat.resources.R$id
+ androidx.appcompat.resources.R$integer
+ androidx.appcompat.resources.R$layout
+ androidx.appcompat.resources.R$string
+ androidx.appcompat.resources.R$style
+ androidx.appcompat.resources.R$styleable
+de/hdodenhof/circleimageview/R.java
+ de.hdodenhof.circleimageview.R
+ de.hdodenhof.circleimageview.R$attr
+ de.hdodenhof.circleimageview.R$styleable
+djjy/stlx/GradeActivity.java
+ djjy.stlx.GradeActivity
+ djjy.stlx.GradeActivity$MyAdapter
+ djjy.stlx.GradeActivity$MyAdapter$ViewHolder
+djjy/stlx/xtlx/PracticeActivity.java
+ djjy.stlx.xtlx.PracticeActivity
+ djjy.stlx.xtlx.PracticeActivity$1
+ djjy.stlx.xtlx.PracticeActivity$2
+ djjy.stlx.xtlx.PracticeActivity$3
+ djjy.stlx.xtlx.PracticeActivity$4
+ djjy.stlx.xtlx.PracticeActivity$MainAdapter
+ djjy.stlx.xtlx.PracticeActivity$MyOnPageChangeListener
+ djjy.stlx.xtlx.PracticeActivity$MyThread
+androidx/arch/core/R.java
+ androidx.arch.core.R
+androidx/fragment/R.java
+ androidx.fragment.R
+ androidx.fragment.R$attr
+ androidx.fragment.R$color
+ androidx.fragment.R$dimen
+ androidx.fragment.R$drawable
+ androidx.fragment.R$id
+ androidx.fragment.R$integer
+ androidx.fragment.R$layout
+ androidx.fragment.R$string
+ androidx.fragment.R$style
+ androidx.fragment.R$styleable
+fm/jiecao/jcvideoplayer_lib/R.java
+ fm.jiecao.jcvideoplayer_lib.R
+ fm.jiecao.jcvideoplayer_lib.R$anim
+ fm.jiecao.jcvideoplayer_lib.R$attr
+ fm.jiecao.jcvideoplayer_lib.R$bool
+ fm.jiecao.jcvideoplayer_lib.R$color
+ fm.jiecao.jcvideoplayer_lib.R$dimen
+ fm.jiecao.jcvideoplayer_lib.R$drawable
+ fm.jiecao.jcvideoplayer_lib.R$id
+ fm.jiecao.jcvideoplayer_lib.R$integer
+ fm.jiecao.jcvideoplayer_lib.R$layout
+ fm.jiecao.jcvideoplayer_lib.R$string
+ fm.jiecao.jcvideoplayer_lib.R$style
+ fm.jiecao.jcvideoplayer_lib.R$styleable
+androidx/savedstate/R.java
+ androidx.savedstate.R
+utils/JsonUtils.java
+ utils.JsonUtils
+com/example/hsdj/Work_Fragment.java
+ com.example.hsdj.Work_Fragment
+androidx/asynclayoutinflater/R.java
+ androidx.asynclayoutinflater.R
+ androidx.asynclayoutinflater.R$attr
+ androidx.asynclayoutinflater.R$color
+ androidx.asynclayoutinflater.R$dimen
+ androidx.asynclayoutinflater.R$drawable
+ androidx.asynclayoutinflater.R$id
+ androidx.asynclayoutinflater.R$integer
+ androidx.asynclayoutinflater.R$layout
+ androidx.asynclayoutinflater.R$string
+ androidx.asynclayoutinflater.R$style
+ androidx.asynclayoutinflater.R$styleable
+jp/wasabeef/glide/transformations/R.java
+ jp.wasabeef.glide.transformations.R
+com/example/hsdj/NewActivity.java
+ com.example.hsdj.NewActivity
+ com.example.hsdj.NewActivity$1
+ com.example.hsdj.NewActivity$2
+androidx/interpolator/R.java
+ androidx.interpolator.R
+androidx/core/R.java
+ androidx.core.R
+ androidx.core.R$attr
+ androidx.core.R$color
+ androidx.core.R$dimen
+ androidx.core.R$drawable
+ androidx.core.R$id
+ androidx.core.R$integer
+ androidx.core.R$layout
+ androidx.core.R$string
+ androidx.core.R$style
+ androidx.core.R$styleable
+login/LoginActivity.java
+ login.LoginActivity
+ login.LoginActivity$1
+ login.LoginActivity$1$1
+ login.LoginActivity$BusinessJson
+ login.LoginActivity$ControlJson
+djjy/djzx/ConsActivity.java
+ djjy.djzx.ConsActivity
+ djjy.djzx.ConsActivity$1
+ djjy.djzx.ConsActivity$ItemClickListener
+androidx/activity/R.java
+ androidx.activity.R
+ androidx.activity.R$attr
+ androidx.activity.R$color
+ androidx.activity.R$dimen
+ androidx.activity.R$drawable
+ androidx.activity.R$id
+ androidx.activity.R$integer
+ androidx.activity.R$layout
+ androidx.activity.R$string
+ androidx.activity.R$style
+ androidx.activity.R$styleable
+androidx/recyclerview/R.java
+ androidx.recyclerview.R
+ androidx.recyclerview.R$attr
+ androidx.recyclerview.R$color
+ androidx.recyclerview.R$dimen
+ androidx.recyclerview.R$drawable
+ androidx.recyclerview.R$id
+ androidx.recyclerview.R$integer
+ androidx.recyclerview.R$layout
+ androidx.recyclerview.R$string
+ androidx.recyclerview.R$style
+ androidx.recyclerview.R$styleable
+djjy/stlx/ExercisesActivity.java
+ djjy.stlx.ExercisesActivity
+ djjy.stlx.ExercisesActivity$1
+ djjy.stlx.ExercisesActivity$ItemClickListener
+androidx/drawerlayout/R.java
+ androidx.drawerlayout.R
+ androidx.drawerlayout.R$attr
+ androidx.drawerlayout.R$color
+ androidx.drawerlayout.R$dimen
+ androidx.drawerlayout.R$drawable
+ androidx.drawerlayout.R$id
+ androidx.drawerlayout.R$integer
+ androidx.drawerlayout.R$layout
+ androidx.drawerlayout.R$string
+ androidx.drawerlayout.R$style
+ androidx.drawerlayout.R$styleable
+androidx/versionedparcelable/R.java
+ androidx.versionedparcelable.R
+djjy/stlx/ExercisesInfo.java
+ djjy.stlx.ExercisesInfo
+ djjy.stlx.ExercisesInfo$DataDTO
+ djjy.stlx.ExercisesInfo$DataDTO$RowsDTO
+com/example/hsdj/R.java
+ com.example.hsdj.R
+ com.example.hsdj.R$anim
+ com.example.hsdj.R$animator
+ com.example.hsdj.R$attr
+ com.example.hsdj.R$bool
+ com.example.hsdj.R$color
+ com.example.hsdj.R$dimen
+ com.example.hsdj.R$drawable
+ com.example.hsdj.R$id
+ com.example.hsdj.R$integer
+ com.example.hsdj.R$interpolator
+ com.example.hsdj.R$layout
+ com.example.hsdj.R$menu
+ com.example.hsdj.R$mipmap
+ com.example.hsdj.R$plurals
+ com.example.hsdj.R$string
+ com.example.hsdj.R$style
+ com.example.hsdj.R$styleable
+ com.example.hsdj.R$xml
+androidx/media/R.java
+ androidx.media.R
+ androidx.media.R$attr
+ androidx.media.R$color
+ androidx.media.R$dimen
+ androidx.media.R$drawable
+ androidx.media.R$id
+ androidx.media.R$integer
+ androidx.media.R$layout
+ androidx.media.R$string
+ androidx.media.R$style
+ androidx.media.R$styleable
+com/example/hsdj/BuildConfig.java
+ com.example.hsdj.BuildConfig
+djjy/stlx/ExercisesInfoActivity.java
+ djjy.stlx.ExercisesInfoActivity
+ djjy.stlx.ExercisesInfoActivity$1
+ djjy.stlx.ExercisesInfoActivity$2
+ djjy.stlx.ExercisesInfoActivity$3
+ djjy.stlx.ExercisesInfoActivity$4
+ djjy.stlx.ExercisesInfoActivity$5
+ djjy.stlx.ExercisesInfoActivity$5$1
+ djjy.stlx.ExercisesInfoActivity$6
+ djjy.stlx.ExercisesInfoActivity$MainAdapter
+ djjy.stlx.ExercisesInfoActivity$MyOnPageChangeListener
+ djjy.stlx.ExercisesInfoActivity$MyThread
+androidx/lifecycle/viewmodel/R.java
+ androidx.lifecycle.viewmodel.R
+djjy/djzx/Cons.java
+ djjy.djzx.Cons
+ djjy.djzx.Cons$DataDTO
+ djjy.djzx.Cons$DataDTO$RowsDTO
+djjy/stlx/Topic.java
+ djjy.stlx.Topic
+djjy/stlx/DoubleChoiseFragment.java
+ djjy.stlx.DoubleChoiseFragment
+ djjy.stlx.DoubleChoiseFragment$1
+login/UserInfo.java
+ login.UserInfo
+ login.UserInfo$DataDTO
+ login.UserInfo$DataDTO$RowsDTO
+androidx/legacy/v4/R.java
+ androidx.legacy.v4.R
+ androidx.legacy.v4.R$attr
+ androidx.legacy.v4.R$color
+ androidx.legacy.v4.R$dimen
+ androidx.legacy.v4.R$drawable
+ androidx.legacy.v4.R$id
+ androidx.legacy.v4.R$integer
+ androidx.legacy.v4.R$layout
+ androidx.legacy.v4.R$string
+ androidx.legacy.v4.R$style
+ androidx.legacy.v4.R$styleable
+androidx/cursoradapter/R.java
+ androidx.cursoradapter.R
+androidx/cardview/R.java
+ androidx.cardview.R
+ androidx.cardview.R$attr
+ androidx.cardview.R$color
+ androidx.cardview.R$dimen
+ androidx.cardview.R$style
+ androidx.cardview.R$styleable
+djjy/filemange/File.java
+ djjy.filemange.File
+ djjy.filemange.File$DataDTO
+ djjy.filemange.File$DataDTO$RowsDTO
+androidx/coordinatorlayout/R.java
+ androidx.coordinatorlayout.R
+ androidx.coordinatorlayout.R$attr
+ androidx.coordinatorlayout.R$color
+ androidx.coordinatorlayout.R$dimen
+ androidx.coordinatorlayout.R$drawable
+ androidx.coordinatorlayout.R$id
+ androidx.coordinatorlayout.R$integer
+ androidx.coordinatorlayout.R$layout
+ androidx.coordinatorlayout.R$string
+ androidx.coordinatorlayout.R$style
+ androidx.coordinatorlayout.R$styleable
+androidx/swiperefreshlayout/R.java
+ androidx.swiperefreshlayout.R
+ androidx.swiperefreshlayout.R$attr
+ androidx.swiperefreshlayout.R$color
+ androidx.swiperefreshlayout.R$dimen
+ androidx.swiperefreshlayout.R$drawable
+ androidx.swiperefreshlayout.R$id
+ androidx.swiperefreshlayout.R$integer
+ androidx.swiperefreshlayout.R$layout
+ androidx.swiperefreshlayout.R$string
+ androidx.swiperefreshlayout.R$style
+ androidx.swiperefreshlayout.R$styleable
+androidx/appcompat/R.java
+ androidx.appcompat.R
+ androidx.appcompat.R$anim
+ androidx.appcompat.R$attr
+ androidx.appcompat.R$bool
+ androidx.appcompat.R$color
+ androidx.appcompat.R$dimen
+ androidx.appcompat.R$drawable
+ androidx.appcompat.R$id
+ androidx.appcompat.R$integer
+ androidx.appcompat.R$interpolator
+ androidx.appcompat.R$layout
+ androidx.appcompat.R$string
+ androidx.appcompat.R$style
+ androidx.appcompat.R$styleable
+androidx/lifecycle/livedata/R.java
+ androidx.lifecycle.livedata.R
+androidx/legacy/coreui/R.java
+ androidx.legacy.coreui.R
+ androidx.legacy.coreui.R$attr
+ androidx.legacy.coreui.R$color
+ androidx.legacy.coreui.R$dimen
+ androidx.legacy.coreui.R$drawable
+ androidx.legacy.coreui.R$id
+ androidx.legacy.coreui.R$integer
+ androidx.legacy.coreui.R$layout
+ androidx.legacy.coreui.R$string
+ androidx.legacy.coreui.R$style
+ androidx.legacy.coreui.R$styleable
+androidx/lifecycle/R.java
+ androidx.lifecycle.R
+androidx/documentfile/R.java
+ androidx.documentfile.R
+com/example/hsdj/My_Fragment.java
+ com.example.hsdj.My_Fragment
+androidx/customview/R.java
+ androidx.customview.R
+ androidx.customview.R$attr
+ androidx.customview.R$color
+ androidx.customview.R$dimen
+ androidx.customview.R$drawable
+ androidx.customview.R$id
+ androidx.customview.R$integer
+ androidx.customview.R$layout
+ androidx.customview.R$string
+ androidx.customview.R$style
+ androidx.customview.R$styleable
+com/example/hsdj/MyApplication.java
+ com.example.hsdj.MyApplication
+djjy/spkc/VideoActivity.java
+ djjy.spkc.VideoActivity
+ djjy.spkc.VideoActivity$1
+ djjy.spkc.VideoActivity$ItemClickListener
+orgmap/OrgActivity.java
+ orgmap.OrgActivity
+ orgmap.OrgActivity$1
+androidx/loader/R.java
+ androidx.loader.R
+ androidx.loader.R$attr
+ androidx.loader.R$color
+ androidx.loader.R$dimen
+ androidx.loader.R$drawable
+ androidx.loader.R$id
+ androidx.loader.R$integer
+ androidx.loader.R$layout
+ androidx.loader.R$string
+ androidx.loader.R$style
+ androidx.loader.R$styleable
+androidx/legacy/coreutils/R.java
+ androidx.legacy.coreutils.R
+ androidx.legacy.coreutils.R$attr
+ androidx.legacy.coreutils.R$color
+ androidx.legacy.coreutils.R$dimen
+ androidx.legacy.coreutils.R$drawable
+ androidx.legacy.coreutils.R$id
+ androidx.legacy.coreutils.R$integer
+ androidx.legacy.coreutils.R$layout
+ androidx.legacy.coreutils.R$string
+ androidx.legacy.coreutils.R$style
+ androidx.legacy.coreutils.R$styleable
+com/google/android/material/R.java
+ com.google.android.material.R
+ com.google.android.material.R$anim
+ com.google.android.material.R$animator
+ com.google.android.material.R$attr
+ com.google.android.material.R$bool
+ com.google.android.material.R$color
+ com.google.android.material.R$dimen
+ com.google.android.material.R$drawable
+ com.google.android.material.R$id
+ com.google.android.material.R$integer
+ com.google.android.material.R$interpolator
+ com.google.android.material.R$layout
+ com.google.android.material.R$plurals
+ com.google.android.material.R$string
+ com.google.android.material.R$style
+ com.google.android.material.R$styleable
+ com.google.android.material.R$xml
+androidx/annotation/experimental/R.java
+ androidx.annotation.experimental.R
+djjy/djzx/ConsInfoActivity.java
+ djjy.djzx.ConsInfoActivity
+ djjy.djzx.ConsInfoActivity$1
+androidx/constraintlayout/widget/R.java
+ androidx.constraintlayout.widget.R
+ androidx.constraintlayout.widget.R$anim
+ androidx.constraintlayout.widget.R$attr
+ androidx.constraintlayout.widget.R$bool
+ androidx.constraintlayout.widget.R$color
+ androidx.constraintlayout.widget.R$dimen
+ androidx.constraintlayout.widget.R$drawable
+ androidx.constraintlayout.widget.R$id
+ androidx.constraintlayout.widget.R$integer
+ androidx.constraintlayout.widget.R$interpolator
+ androidx.constraintlayout.widget.R$layout
+ androidx.constraintlayout.widget.R$string
+ androidx.constraintlayout.widget.R$style
+ androidx.constraintlayout.widget.R$styleable
+com/example/hsdj/MainActivity.java
+ com.example.hsdj.MainActivity
+ com.example.hsdj.MainActivity$1
+androidx/slidingpanelayout/R.java
+ androidx.slidingpanelayout.R
+ androidx.slidingpanelayout.R$attr
+ androidx.slidingpanelayout.R$color
+ androidx.slidingpanelayout.R$dimen
+ androidx.slidingpanelayout.R$drawable
+ androidx.slidingpanelayout.R$id
+ androidx.slidingpanelayout.R$integer
+ androidx.slidingpanelayout.R$layout
+ androidx.slidingpanelayout.R$string
+ androidx.slidingpanelayout.R$style
+ androidx.slidingpanelayout.R$styleable
+person/PersonActivity.java
+ person.PersonActivity
+ person.PersonActivity$1
+ person.PersonActivity$ItemClickListener
+djjy/stlx/Answer.java
+ djjy.stlx.Answer
+com/youth/banner/R.java
+ com.youth.banner.R
+ com.youth.banner.R$animator
+ com.youth.banner.R$attr
+ com.youth.banner.R$drawable
+ com.youth.banner.R$id
+ com.youth.banner.R$layout
+ com.youth.banner.R$styleable
+com/leon/lib/settingview/R.java
+ com.leon.lib.settingview.R
+ com.leon.lib.settingview.R$anim
+ com.leon.lib.settingview.R$attr
+ com.leon.lib.settingview.R$bool
+ com.leon.lib.settingview.R$color
+ com.leon.lib.settingview.R$dimen
+ com.leon.lib.settingview.R$drawable
+ com.leon.lib.settingview.R$id
+ com.leon.lib.settingview.R$integer
+ com.leon.lib.settingview.R$layout
+ com.leon.lib.settingview.R$string
+ com.leon.lib.settingview.R$style
+ com.leon.lib.settingview.R$styleable
+djjy/spkc/VideoInfoActivity.java
+ djjy.spkc.VideoInfoActivity
+ djjy.spkc.VideoInfoActivity$1
+androidx/viewpager/R.java
+ androidx.viewpager.R
+ androidx.viewpager.R$attr
+ androidx.viewpager.R$color
+ androidx.viewpager.R$dimen
+ androidx.viewpager.R$drawable
+ androidx.viewpager.R$id
+ androidx.viewpager.R$integer
+ androidx.viewpager.R$layout
+ androidx.viewpager.R$string
+ androidx.viewpager.R$style
+ androidx.viewpager.R$styleable
+androidx/localbroadcastmanager/R.java
+ androidx.localbroadcastmanager.R
+djjy/filemange/FileActivity.java
+ djjy.filemange.FileActivity
+ djjy.filemange.FileActivity$1
+ djjy.filemange.FileActivity$2
+ djjy.filemange.FileActivity$3
+ djjy.filemange.FileActivity$ItemClickListener
+djjy/spkc/VideoConstant.java
+ djjy.spkc.VideoConstant
+androidx/vectordrawable/animated/R.java
+ androidx.vectordrawable.animated.R
+ androidx.vectordrawable.animated.R$attr
+ androidx.vectordrawable.animated.R$color
+ androidx.vectordrawable.animated.R$dimen
+ androidx.vectordrawable.animated.R$drawable
+ androidx.vectordrawable.animated.R$id
+ androidx.vectordrawable.animated.R$integer
+ androidx.vectordrawable.animated.R$layout
+ androidx.vectordrawable.animated.R$string
+ androidx.vectordrawable.animated.R$style
+ androidx.vectordrawable.animated.R$styleable
+androidx/viewpager2/R.java
+ androidx.viewpager2.R
+ androidx.viewpager2.R$attr
+ androidx.viewpager2.R$color
+ androidx.viewpager2.R$dimen
+ androidx.viewpager2.R$drawable
+ androidx.viewpager2.R$id
+ androidx.viewpager2.R$integer
+ androidx.viewpager2.R$layout
+ androidx.viewpager2.R$string
+ androidx.viewpager2.R$style
+ androidx.viewpager2.R$styleable

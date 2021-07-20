@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Message_Fragment">
+
+    <!--轮播图-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        tools:ignore="MissingConstraints">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="#66000000"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="标题"
+                android:textColor="@android:color/white" />
+            <!--存放小圆点的容器-->
+            <LinearLayout
+                android:id="@+id/ll_point_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!--功能模块-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="一、党建组织"
+            android:textColor="@color/black"
+            android:layout_marginTop="110dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <ImageButton
+            android:id="@+id/btn_per"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/dangyuan"
+            android:layout_marginTop="135dp"
+            android:layout_marginLeft="20dp"/>
+        <ImageButton
+            android:id="@+id/btn_org"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/zuzhi"
+            android:layout_marginTop="135dp"
+            android:layout_marginLeft="40dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="党员查询"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="组织结构图"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="180dp"
+            android:layout_marginLeft="40dp"/>
+    </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:ignore="MissingConstraints">-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="二、组织管理"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_marginTop="200dp"/>-->
+<!--    </LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

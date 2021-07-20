@@ -1,0 +1,114 @@
+package djjy.spkc;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Bundle;
+import android.os.StrictMode;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.hsdj.MyApplication;
+import com.example.hsdj.R;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+public class VideoActivity extends AppCompatActivity {
+    private ImageButton btn_return;
+    private ListView list_view;
+
+    private List<HashMap<String, Object>> list_show = new ArrayList<HashMap<String,Object>>();
+    private VideoListAdapter adapterVideoList;
+    /*传感器*/
+    private SensorManager sensorManager;
+    private SensorEventListener sensorEventListener;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_video);
+
+        MyApplication application = (MyApplication) getApplicationContext();
+
+        btn_return=findViewById(R.id.btn_return);
+        btn_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        /*获取视频课程列表*/
+        try{
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            //创建OkHttpClient实例，主要用于请求网络
+            OkHttpClient okHttpClient = new OkHttpClient();
+            //创建表单请求体
+            FormBody.Builder formBody = new FormBody.Builder();
+            //传递键值对参数
+            formBody.add("ob.id",application.getUserId());
+            //创建Request实例，设置POST参数
+            Request okRequest = new Request.Builder().url("http://58.51.240.150:8000/app/hsdj/xxjymgr/views/getPlanByVideo").post(formBody.build()).build();
+            Response response = okHttpClient.newCall(okRequest).execute();
+            initData(response.body().string());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        initView();
+    }
+
+    private void initData(String result){
+        Gson gson = new Gson();
+        Video b = gson.fromJson(result,Video.class);
+        for (int i = 0; i < b.getData().getRows().size(); i++) {
+            HashMap<String, Object> item = new HashMap<String, Object>();
+            item.put("remark",b.getData().getRows().get(i).getFile_name());
+            item.put("file_path","http://58.51.240.150:8000/media/"+b.getData().getRows().get(i).getFile_path()+
+                    "/"+b.getData().getRows().get(i).getFile_name()+"."+b.getData().getRows().get(i).getFile_type());
+            item.put("id", b.getData().getRows().get(i).getId());
+            item.put("file_score", b.getData().getRows().get(i).getFile_score());
+            item.put("plan_id",b.getData().getRows().get(i).getPlan_id());
+            list_show.add(item);
+        }
+    }
+
+    private void initView(){
+        list_view = findViewById(R.id.list_view);
+        SimpleAdapter adapter= new SimpleAdapter(this, list_show, R.layout.video,
+                new String[]{"remark"}, new int[]{R.id.remark});
+        list_view.setAdapter(adapter);
+        //条目点击事件
+        list_view.setOnItemClickListener(new VideoActivity.ItemClickListener());
+    }
+
+    //获取点击事件
+    private final class ItemClickListener implements AdapterView.OnItemClickListener {
+        @SuppressLint("WrongConstant")
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Intent intent=new Intent(VideoActivity.this, VideoInfoActivity.class);
+            intent.putExtra("id", String.valueOf(list_show.get(position).get("id")));
+            intent.putExtra("file_score", String.valueOf(list_show.get(position).get("file_score")));
+            intent.putExtra("file_path", String.valueOf(list_show.get(position).get("file_path")));
+            intent.putExtra("remark", String.valueOf(list_show.get(position).get("remark")));
+            MyApplication application = (MyApplication) getApplicationContext();
+            intent.putExtra("user_id",application.getUserId());
+            intent.putExtra("plan_id",String.valueOf(list_show.get(position).get("plan_id")));
+            startActivity(intent);
+        }
+    }
+}

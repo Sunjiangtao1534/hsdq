@@ -1,0 +1,126 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.hsdj"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml
+10    <!-- 添加网络权限 -->
+11    <uses-permission android:name="android.permission.INTERNET" /> <!-- 添加读写权限 -->
+11-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:6:5-67
+11-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:6:22-64
+12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+12-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:7:5-80
+12-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:7:22-77
+13    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+13-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:8:5-81
+13-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:8:22-78
+14    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+14-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:9:5-11:47
+14-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:10:9-68
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[com.github.open-android:JieCaoVideoPlayer:0.1.0] C:\Users\32372\.gradle\caches\transforms-2\files-2.1\cf1534881e2cefb0b510b12e9389854a\jetified-JieCaoVideoPlayer-0.1.0\AndroidManifest.xml:13:5-79
+15-->[com.github.open-android:JieCaoVideoPlayer:0.1.0] C:\Users\32372\.gradle\caches\transforms-2\files-2.1\cf1534881e2cefb0b510b12e9389854a\jetified-JieCaoVideoPlayer-0.1.0\AndroidManifest.xml:13:22-76
+16
+17    <application
+17-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:13:5-53:19
+18        android:name="com.example.hsdj.MyApplication"
+18-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:14:9-38
+19        android:allowBackup="true"
+19-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:15:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.3.1] C:\Users\32372\.gradle\caches\transforms-2\files-2.1\fbb11a16c318c97f45bebe09472e679d\core-1.3.1\AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:icon="@mipmap/ic_launcher"
+22-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:16:9-43
+23        android:label="@string/app_name"
+23-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:17:9-41
+24        android:roundIcon="@mipmap/ic_launcher_round"
+24-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:18:9-54
+25        android:supportsRtl="true"
+25-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:19:9-35
+26        android:testOnly="true"
+27        android:theme="@style/Theme.AppCompat.NoActionBar"
+27-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:20:9-59
+28        android:usesCleartextTraffic="true" >
+28-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:21:9-44
+29        <activity android:name="djjy.stlx.GradeActivity" />
+29-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:22:9-69
+29-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:22:19-57
+30        <activity android:name="djjy.stlx.xtlx.PracticeActivity" />
+30-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:23:9-68
+30-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:23:19-65
+31        <activity android:name="djjy.stlx.ModelSelectionActivity" />
+31-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:24:9-69
+31-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:24:19-66
+32        <activity android:name="djjy.stlx.ExercisesInfoActivity" />
+32-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:25:9-68
+32-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:25:19-65
+33        <activity android:name="login.LoginActivity" />
+33-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:26:9-56
+33-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:26:19-53
+34        <activity android:name="djjy.spkc.VideoInfoActivity" />
+34-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:27:9-64
+34-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:27:19-61
+35        <activity android:name="djjy.filemange.FileActivity" />
+35-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:28:10-65
+35-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:28:20-62
+36        <activity android:name="djjy.stlx.ExercisesActivity" />
+36-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:29:9-64
+36-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:29:19-61
+37        <activity
+37-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:30:9-33:52
+38            android:name="djjy.spkc.VideoActivity"
+38-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:31:13-51
+39            android:configChanges="orientation|screenSize|keyboardHidden"
+39-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:32:13-74
+40            android:screenOrientation="portrait" />
+40-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:33:13-49
+41        <activity android:name="person.PerInfoActivity" /> <!-- parentActivityName告诉父类，方便返回（在安卓上点击返回键或左滑即可） -->
+41-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:34:9-59
+41-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:34:19-56
+42        <activity android:name="djjy.djzx.ConsInfoActivity" />
+42-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:35:9-63
+42-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:35:19-60
+43        <activity
+43-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:36:9-38:58
+44            android:name="djjy.djzx.ConsActivity"
+44-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:37:13-50
+45            android:parentActivityName="com.example.hsdj.MainActivity" />
+45-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:38:13-55
+46        <activity
+46-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:39:9-41:58
+47            android:name="orgmap.OrgActivity"
+47-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:40:13-46
+48            android:parentActivityName="com.example.hsdj.MainActivity" />
+48-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:41:13-55
+49        <activity
+49-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:42:9-44:58
+50            android:name="person.PersonActivity"
+50-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:43:13-49
+51            android:parentActivityName="com.example.hsdj.MainActivity" />
+51-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:44:13-55
+52        <activity android:name="com.example.hsdj.NewActivity" />
+52-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:45:9-49
+52-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:45:19-46
+53        <activity android:name="com.example.hsdj.MainActivity" >
+53-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:46:9-52:20
+53-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:46:19-47
+54            <intent-filter>
+54-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:47:13-51:29
+55                <action android:name="android.intent.action.MAIN" />
+55-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:48:17-69
+55-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:48:25-66
+56
+57                <category android:name="android.intent.category.LAUNCHER" />
+57-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:50:17-77
+57-->E:\000code\yxhs_dq\ad\app\src\main\AndroidManifest.xml:50:27-74
+58            </intent-filter>
+59        </activity>
+60    </application>
+61
+62</manifest>

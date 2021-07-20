@@ -1,0 +1,137 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:text="考题"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/_rg_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp">
+
+            <RadioButton
+                android:id="@+id/_rb_option_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="选项A"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/_rb_option_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="选项B"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/_rb_option_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="选项C"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/_rb_option_d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="选项D"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/_rb_option_e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="选项E"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/_rb_option_f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="选项F"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/_rb_option_g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="选项G"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/_rb_option_h"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="选项H"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/check_show_analysis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_question"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="24dp"
+            android:button="@null"
+            android:drawableRight="@drawable/sel_homework_analysis"
+            android:drawablePadding="3dp"
+            android:text="查看解析"
+            android:textColor="#FF9800"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_single_analysis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="答案：A"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"/>
+            <TextView
+                android:id="@+id/tv_analysis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="解析："
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
